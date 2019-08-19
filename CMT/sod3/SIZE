@@ -11,7 +11,8 @@ c
       ! BASIC
       parameter (ldim=2)               ! domain dimension (2 or 3)
       parameter (lx1=9)                ! p-order (avoid uneven and values <6)
-      parameter (lxd=12)               ! p-order for over-integration (dealiasing) 
+c      parameter (lxd=12)               ! p-order for over-integration (dealiasing) 
+      parameter (lxd=9)               ! p-order for over-integration (dealiasing) 
       parameter (lx2=lx1-0)            ! p-order for pressure (lx1 or lx1-2)
                                      
       parameter (lelg=600)          ! max total number of elements
@@ -40,3 +41,7 @@ c
 
       ! INTERNALS
       include 'SIZE.inc'
+
+c automatically added by makenek
+      integer lelr
+      parameter (lelr=lelt) ! max number of local elements per restart file
